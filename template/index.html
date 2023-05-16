@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Detector de Objetos</title>
+  <style>
+    #videoElement {
+      width: 600px;
+      height: 500px;
+      padding-top: 0.5%;
+      padding-left: 3%;
+    }
+    #canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <video id="videoElement" autoplay></video>
+  <canvas id="canvas"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2/dist/coco-ssd.min.js"></script>
+  <script src="/controller/script.js"></script>
+</body>
+<h1>Ejemplo de reconocimiento de objetos con camara WEB</h1>
+<h3>Realizado por: Leonardo Diaz</h3>
+</html>
