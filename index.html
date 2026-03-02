@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Vision | Reconocimiento de Objetos Pro</title>
+    <meta name="description" content="Detector de objetos en tiempo real con Inteligencia Artificial usando TensorFlow.js">
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>IA Vision Pro</h1>
+            <p class="author">Desarrollado por Leonardo Diaz</p>
+        </div>
+        <div class="header-right">
+            <div id="modelStatus" class="status-badge">Cargando Modelo...</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="visualizer-area">
+            <div class="visualizer-container">
+                <div id="loadingOverlay" class="loading-overlay">
+                    <div class="spinner"></div>
+                    <p>Iniciando Motor de IA...</p>
+                </div>
+                <video id="videoElement" autoplay playsinline></video>
+                <canvas id="canvas"></canvas>
+                
+                <div class="video-controls">
+                    <button id="toggleCamera" class="btn">
+                        <span class="icon">📷</span> Detener Cámara
+                    </button>
+                    <button id="takeSnapshot" class="btn btn-secondary">
+                        <span class="icon">📸</span> Capturar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <div class="card">
+                <h2><span>⚙️</span> Configuración</h2>
+                <div class="control-group">
+                    <label for="confidenceSlider">Sensibilidad: <span id="confidenceValue">60</span>%</label>
+                    <input type="range" id="confidenceSlider" min="10" max="95" value="60">
+                </div>
+                <div class="control-group">
+                    <label>Estado del Stream</label>
+                    <div id="streamStatus" class="status-badge active">En Vivo</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><span>📜</span> Historial de Detección</h2>
+                <ul id="historyList">
+                    <!-- Las detecciones se insertarán aquí -->
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Scripts -->
+    <script type="module" src="/script.js"></script>
+</body>
+</html>
